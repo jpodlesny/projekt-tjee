@@ -55,12 +55,8 @@ html,body {
 	    <form method="POST" action="BadanieController">
 			<ul class="form">
 	    		<li>
-	    			<label>Typ</label>
-	    			<input type="text" name="typ" class="field" value="<c:out value="${badanie.typ}" />"/>
-	    		</li>
-	    		<li>
-	        		<label>Data badania</label>
-	        		<input type="text" name="data" class="field" value="<c:out value="${badanie.data}" />"/>
+	    			<label>Nazwa</label>
+	    			<input type="text" name="nazwa" class="field" value="<c:out value="${badanie.nazwa}" />"/>
 	    		</li>
 	    		<li>
 	       			 <label>Opis</label>

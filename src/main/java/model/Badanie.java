@@ -2,22 +2,17 @@ package model;
 
 public class Badanie {
 	
-	String typ;
-	String data;
+	
+	String nazwa;
 	String opis;
 	int koszt;
 	
-	public String getTyp() {
-		return typ;
+	
+	public String getNazwa() {
+		return nazwa;
 	}
-	public void setTyp(String typ) {
-		this.typ = typ;
-	}
-	public String getData() {
-		return data;
-	}
-	public void setData(String data) {
-		this.data = data;
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
 	}
 	public String getOpis() {
 		return opis;
@@ -32,4 +27,5 @@ public class Badanie {
 		this.koszt = koszt;
 	}
 
+	
 }

@@ -24,13 +24,13 @@ public class DostepBaza {
 	}
 	
 	
-	public void usunBadanie(String typ) {
+	public void usunBadanie(String nazwa) {
 		
 		Iterator<Badanie> b = badania.iterator();
 	
         try {
         	while (b.hasNext()){
-        	    if (b.next().getTyp().equals(typ)) {
+        	    if (b.next().getNazwa().equals(nazwa)) {
         	        b.remove();
         	        break;
         	    }
@@ -41,13 +41,13 @@ public class DostepBaza {
     }
 	
 	
-	public Badanie poTypieBadania(String typ) {
+	public Badanie poTypieBadania(String nazwa) {
 			
 		Badanie Badanie = null;
 		
 		try {
 			for(Badanie wsk : badania) {
-				if(wsk.getTyp().equals(typ)) {
+				if(wsk.getNazwa().equals(nazwa)) {
 					Badanie = wsk;	
 					break;
 				}

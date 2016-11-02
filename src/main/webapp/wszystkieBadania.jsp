@@ -58,20 +58,18 @@ html,body {
 	<table>
 		<thead>
 			<tr>
-				<th>Typ</th>
-				<th>Data badania</th>
+				<th>Nazwa</th>
 				<th>Opis</th>
 				<th>Koszt badania (zł)</th>
 			</tr>
 			<tbody>
 				<c:forEach items="${badania}" var="badanie">
 					<tr>
-	                    <td><c:out value="${badanie.typ}" /></td>
-	                    <td><c:out value="${badanie.data}" /></td>
+	                    <td><c:out value="${badanie.nazwa}" /></td>
 	                    <td><c:out value="${badanie.opis}" /></td>
 	                    <td><c:out value="${badanie.koszt}" /></td>
-	                    <td><a onclick="return confirm('Edytować?')" href="BadanieController?action=edit&typ=<c:out value="${badanie.typ}"/>">Edytuj</a></td>
-                    	<td><a onclick="return confirm('Usunąć?')" href="BadanieController?action=delete&typ=<c:out value="${badanie.typ}"/>">Usuń</a></td>                 
+	                    <td><a onclick="return confirm('Edytować?')" href="BadanieController?action=edit&typ=<c:out value="${badanie.nazwa}"/>">Edytuj</a></td>
+                    	<td><a onclick="return confirm('Usunąć?')" href="BadanieController?action=delete&typ=<c:out value="${badanie.nazwa}"/>">Usuń</a></td>                 
              		</tr>
            		</c:forEach>
        		</tbody>

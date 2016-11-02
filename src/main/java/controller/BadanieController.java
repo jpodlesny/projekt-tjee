@@ -49,13 +49,13 @@ public class BadanieController extends HttpServlet {
             request.setAttribute("badania", dao.pobierzWszystkie());
         } else if(action.equalsIgnoreCase("delete")) {
             forward = WSZYSTKIE_BADANIA;
-        	String typ = request.getParameter("typ");
-            dao.usunBadanie(typ);
+        	String nazwa = request.getParameter("nazwa");
+            dao.usunBadanie(nazwa);
             request.setAttribute("badania", dao.pobierzWszystkie());
         } else if(action.equalsIgnoreCase("edit")) {
             forward = DODAJ_EDYTUJ;
-            String typ = request.getParameter("typ");
-            Badanie Badanie = dao.poTypieBadania(typ);
+            String nazwa = request.getParameter("nazwa");
+            Badanie Badanie = dao.poTypieBadania(nazwa);
             request.setAttribute("badanie", Badanie);             
         } else {
             forward = DODAJ_EDYTUJ;
@@ -73,8 +73,7 @@ public class BadanieController extends HttpServlet {
 		
 		Badanie badanie = new Badanie();
 
-        badanie.setTyp(request.getParameter("typ"));
-        badanie.setData(request.getParameter("data"));
+        badanie.setNazwa(request.getParameter("nazwa"));
         badanie.setOpis(request.getParameter("opis"));
         
        try {
@@ -85,9 +84,10 @@ public class BadanieController extends HttpServlet {
        }
         
         dao.add(badanie);
-
-        RequestDispatcher view = request.getRequestDispatcher(WSZYSTKIE_BADANIA);      
-        request.setAttribute("badania", dao.pobierzWszystkie());       
+        
+        
+        RequestDispatcher view = request.getRequestDispatcher(WSZYSTKIE_BADANIA);       
+        request.setAttribute("badania", dao.pobierzWszystkie());
         view.forward(request, response);
         
 	}
