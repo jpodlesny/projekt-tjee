@@ -16,9 +16,21 @@
   	<servlet-class>controller.BadanieController</servlet-class>
   </servlet>
   
+   <servlet>
+    <description></description>
+    <display-name>Cennik</display-name>
+  	<servlet-name>Cennik</servlet-name>
+  	<servlet-class>controller.Cennik</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
   	<servlet-name>BadanieController</servlet-name>
   	<url-pattern>/BadanieController</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>Cennik</servlet-name>
+  	<url-pattern>/Cennik</url-pattern>
   </servlet-mapping>
   
   <jsp-config>

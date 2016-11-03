@@ -54,7 +54,7 @@ html,body {
 
 
 <div class="table">
-	<h2>BAZA DANYCH</h2>
+	<h2>CENNIK BADAŃ</h2>
 	<table>
 		<thead>
 			<tr>
@@ -68,8 +68,8 @@ html,body {
 	                    <td><c:out value="${badanie.nazwa}" /></td>
 	                    <td><c:out value="${badanie.opis}" /></td>
 	                    <td><c:out value="${badanie.koszt}" /></td>
-	                    <td><a onclick="return confirm('Edytować?')" href="BadanieController?action=edit&typ=<c:out value="${badanie.nazwa}"/>">Edytuj</a></td>
-                    	<td><a onclick="return confirm('Usunąć?')" href="BadanieController?action=delete&typ=<c:out value="${badanie.nazwa}"/>">Usuń</a></td>                 
+	                    <td><a onclick="return confirm('Edytować?')" href="BadanieController?action=edit&nazwa=<c:out value="${badanie.nazwa}"/>">Edytuj</a></td>
+                    	<td><a onclick="return confirm('Usunąć?')" href="BadanieController?action=delete&nazwa=<c:out value="${badanie.nazwa}"/>">Usuń</a></td>                 
              		</tr>
            		</c:forEach>
        		</tbody>

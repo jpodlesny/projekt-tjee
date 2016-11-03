@@ -83,7 +83,18 @@ public class BadanieController extends HttpServlet {
     	   e.printStackTrace();
        }
         
-        dao.add(badanie);
+       String nazwa = request.getParameter("nazwa");
+       
+       if(nazwa == null || nazwa.isEmpty()){
+           
+           dao.add(badanie);
+           
+           } else {
+           	
+           	dao.usunBadanie(nazwa);
+           	dao.add(badanie);
+           	
+           }
         
         
         RequestDispatcher view = request.getRequestDispatcher(WSZYSTKIE_BADANIA);       
