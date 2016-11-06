@@ -95,8 +95,7 @@ public class BadanieController extends HttpServlet {
            	dao.add(badanie);
            	
            }
-        
-        
+           
         RequestDispatcher view = request.getRequestDispatcher(WSZYSTKIE_BADANIA);       
         request.setAttribute("badania", dao.pobierzWszystkie());
         view.forward(request, response);

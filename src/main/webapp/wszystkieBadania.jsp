@@ -45,24 +45,20 @@ html,body {
 	border-bottom: 1px solid #D9D9D9;
 }
 
-
 </style>
 </head>
 
 <body>
-
-
-
 <div class="table">
 	<h2>CENNIK BADAŃ</h2>
 	<table>
-		<thead>
 			<tr>
 				<th>Nazwa</th>
 				<th>Opis</th>
 				<th>Koszt badania (zł)</th>
+				<th colspan="2">Opcje</th>
 			</tr>
-			<tbody>
+
 				<c:forEach items="${badania}" var="badanie">
 					<tr>
 	                    <td><c:out value="${badanie.nazwa}" /></td>
@@ -72,14 +68,15 @@ html,body {
                     	<td><a onclick="return confirm('Usunąć?')" href="BadanieController?action=delete&nazwa=<c:out value="${badanie.nazwa}"/>">Usuń</a></td>                 
              		</tr>
            		</c:forEach>
-       		</tbody>
+
     </table>
     <p><a href="BadanieController?action=dodaj" style="padding: 3px; border: outset; border-width: 1px; background-color: #F2FFF0; color: #0F9200; text-decoration: none; float: right;">Dodaj badanie</a></p><br><br>
     
     <jsp:useBean id="kosztBadania" class="model.Badanie"></jsp:useBean>
     <jsp:setProperty property="*" name="kosztBadania"/>
     
-    <p>Koszt ostatnio dodanego badania: <jsp:getProperty property="koszt" name="kosztBadania"/> zł.</p>
+    <p>Koszt ostatnio dodanego badania: <jsp:getProperty property="koszt" name="kosztBadania"/> zł.</p><br><br>
+    <p><a href="BadanieController?action=start" style="padding: 3px; border: outset; border-width: 1px; background-color: #F2FFF0; color: #0F9200; text-decoration: none; float: left;">Cofnij</a></p>
      
 </div>
 
